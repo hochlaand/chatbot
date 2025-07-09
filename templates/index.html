@@ -3,23 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>😊 Chatbot dla Dominiki</title>tle>😊 Chatbot dla Dominiki</title>YPE html>
-<html lang="pl">        <            <div class="welcome-message">
-                Cześć Dominika! 😊<br>
-                Napisz mi cokolwiek, a ja postaram się Cię rozweselić! 🌟✨
-            </div>class="chat-header">
-            <h1>😊 Cześć Dominika!</h1>
-            <p>Jestem tutaj, żeby umilić Ci dzień! ✨</p>
-        </div>ad>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>� Chatbot dla Najfajniejszej Znajomej</tit        <            <div class="welcome-message">
-                Cześć Dominika! 😊<br>
-                Napisz mi cokolwiek, a ja postaram się Cię rozweselić! 🌟✨
-            </div>class="chat-header">
-            <h1>😊 Cześć Dominika!</h1>
-            <p>Jestem tutaj, żeby umilić Ci dzień! ✨</p>
-        </div>
+    <title>😊 Chatbot dla Dominiki</title>
     <style>
         * {
             margin: 0;
@@ -216,6 +200,58 @@
             padding: 20px;
         }
 
+        .info-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%);
+            margin: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .info-section h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        .toggle-info {
+            background: none;
+            border: none;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 0.8em;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .toggle-info:hover {
+            color: #764ba2;
+        }
+
+        .info-content {
+            display: none;
+            margin-top: 10px;
+        }
+
         /* Scrollbar styling */
         .chat-messages::-webkit-scrollbar {
             width: 6px;
@@ -256,14 +292,40 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>� Twój Chatbot</h1>
+            <h1>😊 Cześć Dominika!</h1>
             <p>Jestem tutaj, żeby umilić Ci dzień! ✨</p>
         </div>
         
         <div class="chat-messages" id="chatMessages">
             <div class="welcome-message">
-                Cześć! �<br>
+                Cześć Dominika! 😊<br>
                 Napisz mi cokolwiek, a ja postaram się Cię rozweselić! 🌟✨
+            </div>
+            
+            <div class="info-section">
+                <h3>💫 Jak mogę Ci pomóc?</h3>
+                <ul class="info-list">
+                    <li>Rozmawiam z Tobą w zabawny i pozytywny sposób</li>
+                    <li>Odpowiadam na Twoje pytania z humorem i ciepłem</li>
+                    <li>Staram się Cię rozśmieszyć i poprawić humor</li>
+                    <li>Wiem, że jesteś cudowną tancerką i świetną osobą!</li>
+                </ul>
+                <button class="toggle-info" onclick="toggleInfo()">
+                    Pokaż więcej informacji ▼
+                </button>
+                <div class="info-content" id="infoContent">
+                    <h3>🎭 O czym możemy rozmawiać?</h3>
+                    <ul class="info-list">
+                        <li>O tańcu i Twojej pasji</li>
+                        <li>O pracy w przedszkolu</li>
+                        <li>O tym, jak wspaniale wyglądasz</li>
+                        <li>O Twoich planach i marzeniach</li>
+                        <li>O wszystkim, co Cię interesuje!</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic; color: #888;">
+                        💕 Pamiętaj - jestem tutaj, żeby dodać Ci energii i sprawić radość!
+                    </p>
+                </div>
             </div>
         </div>
         
@@ -387,6 +449,20 @@
         messageInput.addEventListener('input', () => {
             sendButton.disabled = !messageInput.value.trim() || sendButton.disabled;
         });
+
+        // Funkcja do pokazywania/ukrywania dodatkowych informacji
+        function toggleInfo() {
+            const infoContent = document.getElementById('infoContent');
+            const toggleButton = document.querySelector('.toggle-info');
+            
+            if (infoContent.style.display === 'none' || infoContent.style.display === '') {
+                infoContent.style.display = 'block';
+                toggleButton.textContent = 'Ukryj informacje ▲';
+            } else {
+                infoContent.style.display = 'none';
+                toggleButton.textContent = 'Pokaż więcej informacji ▼';
+            }
+        }
     </script>
 </body>
 </html>
